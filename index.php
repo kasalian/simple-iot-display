@@ -10,6 +10,8 @@
 	// 
 	require('dbconnect.php');
 
+	echo "<h1>MY HOME PAGE - INDEX</h1><br/>";
+
 
 	$result = $myPDO->query("SELECT id, distance, location, cdatetime FROM `garbage_data`");
 
