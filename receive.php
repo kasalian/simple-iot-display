@@ -24,8 +24,6 @@
 		':location' => $location
 	]);
 
-	$stmt->close();
-
 
 	echo "<h4>DATA RECEIVED SUCCESSFULLY</h4>";
 
