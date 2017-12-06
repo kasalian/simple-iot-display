@@ -10,11 +10,11 @@
 	$result = $myPDO->query("SELECT id, distance, location, cdatetime FROM `garbage_data`");
 
 	// var_dump($result);
-	
+	print "<u>Distance\tLocation\tDateTime\t</u>\n<br/>";
 	foreach ($result as $row) {
-		print $row['distance'] . "\t";
+		print "<h2> ".$row['distance'] . "</h2>\t";
 		print $row['location'] . "\t";
-		print $row['cdatetime'] . "\t";
+		print $row['cdatetime'] . "\t\n<br/>";
 	}
 
  ?>
