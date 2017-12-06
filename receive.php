@@ -16,9 +16,14 @@
 
 	echo "<h1>MY RECEIVING PAGE - Receive</h1><br/>";
 
-	$stmt = $myPDO->prepare("INSERT INTO garbage_data (distance, location, cdatetime) VALUES (?, ?, NOW())");
-    $stmt->bind_param("ds", $distance, $location);
-	$stmt->execute();
+	$stmt = $myPDO->prepare("INSERT INTO garbage_data (distance, location, cdatetime) VALUES (:distance, :location, NOW())");
+
+	// perform the query
+	$stmt->execute([
+		':distance' => $distance,
+		':location' => $location
+	]);
+
 	$stmt->close();
 
 
