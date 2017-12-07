@@ -1,7 +1,16 @@
 <?php
 
-	$distance = $_GET['d'];
-	$location = $_GET['l'];
+
+	if(isset($_POST['d'])){
+		$distance = $_POST['d'];
+		$location = $_POST['l'];
+	}elseif(isset($_GET['d'])){
+		$distance = $_GET['d'];
+		$location = $_GET['l'];
+	}else{
+		$distance = "";
+		$location = "";
+	}
 
 	echo "<br/><h2>Receiving Data...</h2><br/>";
 
