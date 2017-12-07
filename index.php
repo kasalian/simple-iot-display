@@ -21,7 +21,7 @@
 	
 
 
-	$result = $myPDO->query("SELECT id, distance, location, cdatetime FROM `garbage_data` LIMIT 20");
+	$result = $myPDO->query("SELECT id, distance, location, cdatetime FROM `garbage_data` ORDER BY id DESC LIMIT 20");
 
 	// var_dump($result);
 	print "<u>Distance\tLocation\tDateTime\t</u>\n<br/>";
