@@ -1,10 +1,10 @@
 <?php 
 
+	echo getenv("M_DB_HOST");
 	require __DIR__ . '/vendor/autoload.php';
 	$dotenv = new Dotenv\Dotenv(__DIR__);
 	$dotenv->load();
 
-	echo getenv("M_DB_HOST");
 
 	$DB_HOST = getenv("M_DB_HOST");
 	$DB_NAME = getenv("M_DB_NAME");
