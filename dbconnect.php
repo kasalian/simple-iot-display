@@ -1,6 +1,6 @@
 <?php 
 
-	// require __DIR__ . '/vendor/autoload.php';
+	require('/vendor/autoload.php');
 
 	// if it is my local server and not heroku hosted server
 	
