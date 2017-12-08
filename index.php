@@ -1,7 +1,3 @@
-<?php 
-require('dbconnect.php');
-
- ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +18,7 @@ require('dbconnect.php');
 
 	
 	
-
+	require('dbconnect.php');
 
 	$result = $myPDO->query("SELECT id, distance, location, cdatetime FROM `garbage_data` ORDER BY id DESC LIMIT 20");
 
