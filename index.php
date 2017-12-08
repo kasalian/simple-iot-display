@@ -1,3 +1,7 @@
+<?php 
+require('dbconnect.php');
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +20,7 @@
 	<h1 id='title-h1'>GARBAGE LEVEL INDICATOR</h1><br/>
 		<?php
 
-	require('dbconnect.php');
-
+	
 	
 
 
