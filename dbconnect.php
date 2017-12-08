@@ -4,6 +4,8 @@
 	$dotenv = new Dotenv\Dotenv(__DIR__);
 	$dotenv->load();
 
+	echo getenv("M_DB_HOST");
+
 	$DB_HOST = getenv("M_DB_HOST");
 	$DB_NAME = getenv("M_DB_NAME");
 	$DB_USERNAME = getenv("M_DB_USERNAME");
