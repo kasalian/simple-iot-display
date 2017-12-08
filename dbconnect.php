@@ -9,10 +9,6 @@
 		$dotenv->load();
 	}
 
-	echo "First: " . getenv("M_DB_HOST");
-	
-	echo "<br/>SECOND: " . getenv("M_DB_NAME");
-
 	$DB_HOST = getenv("M_DB_HOST");
 	$DB_NAME = getenv("M_DB_NAME");
 	$DB_USERNAME = getenv("M_DB_USERNAME");
