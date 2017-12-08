@@ -1,22 +1,31 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Garbage Level Indicator</title>
+	<style  type="text/css">
+		body{
+			background-color: orange;
+		}
 
-	// $distance = $_GET['d'];
-	// $location = $_GET['l'];
+		title-h1{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1 id='title-h1'>GARBAGE LEVEL INDICATOR</h1><br/>
+		<?php
 
-	// echo "<br/><h2>Index-Page Displaying Data...</h2><br/>";
-
-	// echo isset($distance)? "<h1>DISTANCE: $distance</h1>" : "No Distance";
-	// echo isset($location)? "<h1>DISTANCE: $location</h1>" : "No Location";
-	// 
 	require('dbconnect.php');
 
-	echo "<h1>MY HOME PAGE - INDEX</h1><br/>";
+	
 
 
-	$result = $myPDO->query("SELECT id, distance, location, cdatetime FROM `garbage_data`");
+	$result = $myPDO->query("SELECT id, distance, location, cdatetime FROM `garbage_data` ORDER BY id DESC LIMIT 20");
 
 	// var_dump($result);
 	print "<u>Distance\tLocation\tDateTime\t</u>\n<br/>";
+	
 	foreach ($result as $row) {
 		print "<h2> ".$row['distance'] . "</h2>\t";
 		print $row['location'] . "\t";
@@ -25,3 +34,7 @@
 
 
 ?>
+
+
+</body>
+</html>
