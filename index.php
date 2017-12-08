@@ -22,6 +22,10 @@
 
 	require('dbconnect.php');
 
+	$binHeight = 70.0; // Assuming the garbage bin is 70.0cm in height.
+	$distance_left = 70.0;
+	$garbage_location = "";
+
 	
 
 
@@ -29,17 +33,47 @@
 
 	// var_dump($result);
 	print "<u>Distance\tLocation\tDateTime\t</u>\n<br/>";
-	
+	$count  = 1;
 	foreach ($result as $row) {
 		print "<h2> ".$row['distance'] . "</h2>\t";
 		print $row['location'] . "\t";
 		print $row['cdatetime'] . "\t\n<br/>";
+
+		if($count == 1){
+			$distance_left = $row['distance'];
+			$garbage_location = $row['location'];
+		}
+		$count++;
 	}
+
+	$distance = ($binHeight - $distance_left);
+
+	$percent = (double)$distance/$binHeight * 100;
+
+// echo "<h1>$percent % | $distance</h1>";
+  
+  // if its above 70 percent empty
+      if ($percent >= 70.0){
+        
+         	$colour = "green";
+         	$status_label = "Garbage-Level: EMPTY";
+        
+        }
+        else if($percent >= 50.0)
+        {
+         	$colour = "yellow";
+         	$status_label = "Garbage-Level:  HALF-EMPTY";
+        }
+        else
+        {
+        	$colour = "red";
+        	$status_label = "Garbage-Level FULL : Contents Due For Disposal";
+        }
 
 
 ?>	
 	</div>
-	<div  style="float:left; width: 50em; background-color: lime">
+	<div  style="float:left; width: 50em; background-color: lightgrey">
 		<canvas id="bar-chart" width="800" height="450"></canvas>
 
 
@@ -51,12 +85,12 @@
 				new Chart(document.getElementById("bar-chart"), {
 				    type: 'bar',
 				    data: {
-				      labels: ["Bauchi"],
+				      labels: ["Garbage Level Measured in (Cm)"],
 				      datasets: [
 				        {
-				          label: "Filled Level (Cm)",
-				          backgroundColor: ["#3e95cd", "#ee2323"],
-				          data: [65.8]
+				          label: "<?php echo $status_label; ?>",
+				          backgroundColor: ["<?php echo $colour; ?>"],
+				          data: [<?php echo $distance; ?>]
 				        }
 				      ]
 				    },
@@ -65,7 +99,25 @@
 				      title: {
 				        display: true,
 				        text: 'Garbage Level Indicator'
-				      }
+				      },
+				      scales: {
+                    xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Garbage Level Graphical Display | Garbage Location: <?php echo $garbage_location ?>'
+                            }
+                        }],
+                    yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 2,
+                                stepValue: 2,
+                                max: <?php echo $binHeight; ?>
+                            }
+                        }]
+                },
 				    }
 				});
 
