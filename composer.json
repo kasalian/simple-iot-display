@@ -1,15 +1,5 @@
 {
-    "name": "chinakalight/garbagemonitor",
-    "description": "A simple application to retrieve data from an iot device for instance arduino and display a graph\"",
-    "type": "project",
     "require": {
         "vlucas/phpdotenv": "^2.4"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Chinaka Light",
-            "email": "light@uplift.ng, chinakalight@googlemail.com",
-        }
-    ]
+    }
 }
