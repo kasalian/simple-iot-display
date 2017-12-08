@@ -46,7 +46,7 @@
 		$count++;
 	}
 
-	$distance = ($binHeight - $distance_left);
+	$distance = abs($binHeight - $distance_left);
 
 	$percent = (double)$distance/$binHeight * 100;
 	$percent = ceil($percent);
