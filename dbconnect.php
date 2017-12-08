@@ -1,7 +1,7 @@
 <?php 
 
 	
-	// require __DIR__ . '/vendor/autoload.php';
+	require __DIR__ . '/vendor/autoload.php';
 
 	// echo "First: " . getenv("M_DB_HOST");
 
