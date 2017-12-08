@@ -47,8 +47,9 @@
 	}
 
 	$distance = abs($binHeight - $distance_left);
+	// $distance = abs($distance_left);
 
-	$percent = (double)$distance/$binHeight * 100;
+	$percent = (double)$distance_left/$binHeight * 100;
 	$percent = ceil($percent);
 
 // echo "<h1>$percent % | $distance</h1>";
