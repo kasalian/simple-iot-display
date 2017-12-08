@@ -6,7 +6,7 @@
 	// echo "First: " . getenv("M_DB_HOST");
 
 	$dotenv = new Dotenv\Dotenv(__DIR__);
-	// $dotenv->load();
+	$dotenv->load();
 
 
 	// echo "<br/>SECOND: " . getenv("M_DB_HOST");
