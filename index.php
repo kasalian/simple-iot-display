@@ -16,9 +16,10 @@
 	<h1 id='title-h1'>GARBAGE LEVEL INDICATOR</h1><br/>
 		<?php
 
-	
-	
 	require('dbconnect.php');
+
+	
+
 
 	$result = $myPDO->query("SELECT id, distance, location, cdatetime FROM `garbage_data` ORDER BY id DESC LIMIT 20");
 
@@ -33,7 +34,6 @@
 
 
 ?>
-
 
 </body>
 </html>
