@@ -49,15 +49,16 @@
 	$distance = ($binHeight - $distance_left);
 
 	$percent = (double)$distance/$binHeight * 100;
+	$percent = ceil($percent);
 
 // echo "<h1>$percent % | $distance</h1>";
   
   // if its above 70 percent empty
+  $alert ='';
       if ($percent >= 70.0){
         
          	$colour = "green";
-         	$status_label = "Garbage-Level: EMPTY";
-        
+         	$status_label = "Garbage-Level: EMPTY";        
         }
         else if($percent >= 50.0)
         {
@@ -68,6 +69,7 @@
         {
         	$colour = "red";
         	$status_label = "Garbage-Level FULL : Contents Due For Disposal";
+         	$alert=' GARBAGE-FULL PLEASE EMPTY ';
         }
 
 
@@ -98,7 +100,7 @@
 				      legend: { display: false },
 				      title: {
 				        display: true,
-				        text: 'Garbage Level Indicator'
+				        text: 'Garbage Level Indicator | Empty: <?php echo "$distance_left CM | $percent % | USED: $distance CM | $alert";?>'
 				      },
 				      scales: {
                     xAxes: [{
