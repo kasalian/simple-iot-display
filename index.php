@@ -14,7 +14,7 @@
 	<script src="dist/Chart.bundle.min.js"></script>
     <!-- <script src="dist/utils.js"></script> -->
 </head>
-<body style="background-image: url('imagebck3.jpeg'); background-repeat: all;">
+<body style="background-image: url('imagebck6.jpeg'); background-repeat: all;">
 	<h1 id='title-h1' style="color: black">GARBAGE LEVEL INDICATOR</h1><br/>
 
 	<div style="float:left; width: 25em;background-color: transparent; color: black; font-weight: 300;">
