@@ -14,10 +14,10 @@
 	<script src="dist/Chart.bundle.min.js"></script>
     <!-- <script src="dist/utils.js"></script> -->
 </head>
-<body>
-	<h1 id='title-h1'>GARBAGE LEVEL INDICATOR</h1><br/>
+<body style="background-image: url('imagebck3.jpeg'); background-repeat: all;">
+	<h1 id='title-h1' style="color: black">GARBAGE LEVEL INDICATOR</h1><br/>
 
-	<div style="float:left; width: 25em;background-color: white">
+	<div style="float:left; width: 25em;background-color: transparent; color: black; font-weight: 300;">
 		<?php
 
 	require('dbconnect.php');
@@ -76,7 +76,7 @@
 
 ?>	
 	</div>
-	<div  style="float:left; width: 50em; background-color: lightgrey">
+	<div  style="float:left; width: 50em; background-color: transparent; color: black">
 		<canvas id="bar-chart" width="800" height="450"></canvas>
 
 
